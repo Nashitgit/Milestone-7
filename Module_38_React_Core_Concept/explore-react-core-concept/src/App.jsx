@@ -34,12 +34,14 @@ function Person() {
 }
 
 
-const {grade, score } = {grade: '7', score: '99'}
-function Student(props) {
+// const {grade, score } = {grade: '7', score: '99'}
+function Student({grade=1, score=0}) {
+  console.log(grade, score);
+  
   return <div className='student'>
     <h3>This is a student</h3>
-    <p>Name: Sakib</p>
-    <p>Age:</p>
+    <p>Grade: {grade}</p>
+    <p>Score: {score}</p>
   </div>
 }
 
