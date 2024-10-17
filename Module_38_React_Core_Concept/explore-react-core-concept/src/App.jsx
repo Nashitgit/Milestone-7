@@ -9,11 +9,21 @@ function App() {
      
       <h1>Vite + React</h1>
       
+      <Device name="Laptop" price="80k"></Device>
+      <Device name="Mobile" price="25k"></Device>
+      <Device name="Watch" price = "5k"></Device>
       <Person/>
-      <Student/>
+      <Student grade='7' score='99'/>
+      <Student grade='9' score='88'/>
+      <Developer></Developer>
       
     </>
   )
+}
+
+function Device(props) {
+  // console.log(props);
+  return <h2>This Device: {props.name} price: {props.price}</h2>
 }
 
 function Person() {
@@ -24,12 +34,35 @@ function Person() {
 }
 
 
-function Student() {
-  return <div>
+const {grade, score } = {grade: '7', score: '99'}
+function Student(props) {
+  return <div className='student'>
     <h3>This is a student</h3>
     <p>Name: Sakib</p>
     <p>Age:</p>
   </div>
+}
+
+function Developer() {
+  const developerStyle = {
+    margin: '20px',
+    padding: '20px',
+    border: '2px solid purple',
+    borderRadius: '20px'
+  }
+  return (
+    // <div style={{
+    //   margin: '20px',
+    //   padding: '20px',
+    //   border: '2px solid purple',
+    //   borderRadius: '20px'
+    // }}>
+
+    <div style={developerStyle}>
+      <h5>Devo Devo</h5>
+      <p>Coding</p>
+    </div>
+  )
 }
 
 export default App
