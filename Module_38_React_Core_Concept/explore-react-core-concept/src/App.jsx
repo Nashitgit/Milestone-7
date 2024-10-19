@@ -3,8 +3,19 @@ import './App.css'
 import Todo from './Todo';
 import Actor from './Actor';
 import Singer from './Singer';
+import BookStore from './BookStore';
 
 function App() {
+
+  const books = [
+    
+      {id:1, name: 'Physics', price:120},
+      {id:2, name: 'Chemistry', price:150},
+      {id:3, name: 'Biology', price:180},
+      {id:4, name: 'Mathematics', price:200}
+    
+  ]
+
   const actors = ['Sakib', 'Raj', 'Jasim', 'Rubel']
 
   const singers = [
@@ -14,10 +25,15 @@ function App() {
     {id:4, name: 'Pritom', age: 32}
   ]
 
+
   return (
     <>
 
       <h1>Vite + React</h1>
+
+      <BookStore books={books}></BookStore>
+
+
       {
         singers.map(singer => <Singer  singer={singer}></Singer>)
       }
